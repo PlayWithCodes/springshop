@@ -1,10 +1,9 @@
 package myshop.springshop.service;
 
 import lombok.RequiredArgsConstructor;
-import myshop.springshop.repository.Member;
+import myshop.springshop.domain.Member;
 import myshop.springshop.repository.MemberRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor

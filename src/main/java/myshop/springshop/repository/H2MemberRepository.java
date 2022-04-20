@@ -1,6 +1,7 @@
 package myshop.springshop.repository;
 
 import lombok.RequiredArgsConstructor;
+import myshop.springshop.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
