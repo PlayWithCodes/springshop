@@ -35,4 +35,19 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status; // 주문상태 [ORDER, CANCEL]
+
+    public void setMember(Member member) {
+        member.getOrders().add(this);
+        this.member = member;
+    }
+
+    public void addOrderItem(OrderItem orderItem) {
+        orderItem.setOrder(this);
+        orderItems.add(orderItem);
+    }
+
+    public void setDelivery(Delivery delivery) {
+        delivery.setOrder(this);
+        this.delivery = delivery;
+    }
 }

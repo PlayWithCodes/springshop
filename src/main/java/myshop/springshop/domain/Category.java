@@ -11,12 +11,10 @@ import java.util.List;
 import static javax.persistence.FetchType.*;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter
 public class Category {
 
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name = "category_id")
     private Long id;
 
@@ -34,4 +32,9 @@ public class Category {
 
     @OneToMany(mappedBy = "parent")
     private List<Category> child = new ArrayList<>();
+
+    public void addChildCategory(Category child) {
+        child.setParent(this);
+        this.child.add(child);
+    }
 }
