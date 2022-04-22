@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class H2MemberRepository implements MemberRepository {
+public class MemberRepositoryImpl implements MemberRepository {
 
     private final EntityManager em;
 
