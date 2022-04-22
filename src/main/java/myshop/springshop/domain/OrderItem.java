@@ -1,6 +1,8 @@
 package myshop.springshop.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import myshop.springshop.domain.item.Item;
 
@@ -9,8 +11,8 @@ import javax.persistence.*;
 import static javax.persistence.FetchType.*;
 
 @Entity
-@Getter
-@Setter
+@Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
     @Id @GeneratedValue
@@ -29,7 +31,7 @@ public class OrderItem {
 
     private int count;
 
-    public OrderItem createOrderItem(Item item, int orderPrice, int count) {
+    public static OrderItem createOrderItem(Item item, int orderPrice, int count) {
         item.removeStock(count);
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
