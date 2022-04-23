@@ -43,4 +43,8 @@ public class OrderService {
         Order order = orderRepository.findOrder(orderId);
         order.cancelOrder();
     }
+
+    public Order findOrder(Long id) {
+        return orderRepository.findOrder(id);
+    }
 }

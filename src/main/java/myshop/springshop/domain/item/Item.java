@@ -1,6 +1,7 @@
 package myshop.springshop.domain.item;
 
 import lombok.Getter;
+import lombok.Setter;
 import myshop.springshop.domain.Category;
 import myshop.springshop.exception.NotEnoughStockException;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-@Getter
+@Getter @Setter
 public abstract class Item {
 
     @Id
