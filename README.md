@@ -1,4 +1,4 @@
-# 스프링부트 연습사이트
+# 스프링부트 학습용 사이트
 
 홈페이지   
 <img width="733" alt="스크린샷 2022-04-24 오후 10 12 17" src="https://user-images.githubusercontent.com/91449110/164978543-1776e5eb-91df-4d84-a2cd-a6d9416c8483.png">
