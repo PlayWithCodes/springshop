@@ -34,8 +34,8 @@ public class OrderRepository {
         List<Predicate> criteria = new ArrayList<>();
 
         if (orderSearch.getOrderStatus() != null) {
-            Predicate status = criteriaBuilder.equal(orderRoot.get("status"), orderSearch.getOrderStatus());
-            criteria.add(status);
+            Predicate orderStatus = criteriaBuilder.equal(orderRoot.get("orderStatus"), orderSearch.getOrderStatus());
+            criteria.add(orderStatus);
         }
         if (StringUtils.hasText(orderSearch.getMemberName())) {
             Predicate name = criteriaBuilder.like(objectJoin.get("name"), "%" + orderSearch.getMemberName() + "%");

@@ -9,8 +9,11 @@ import myshop.springshop.domain.item.Item;
 import myshop.springshop.repository.ItemRepository;
 import myshop.springshop.repository.MemberRepository;
 import myshop.springshop.repository.OrderRepository;
+import myshop.springshop.repository.OrderSearch;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -46,5 +49,9 @@ public class OrderService {
 
     public Order findOrder(Long id) {
         return orderRepository.findOrder(id);
+    }
+
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAllByCriteria(orderSearch);
     }
 }
