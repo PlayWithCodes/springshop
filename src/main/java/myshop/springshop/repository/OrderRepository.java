@@ -46,4 +46,12 @@ public class OrderRepository {
         TypedQuery<Order> query = entityManager.createQuery(criteriaQuery).setMaxResults(1000);
         return query.getResultList();
     }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return entityManager.createQuery(
+                "select o from Order o" +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery", Order.class)
+                .getResultList();
+    }
 }
