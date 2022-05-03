@@ -38,4 +38,11 @@ public class MemberServiceImpl implements MemberService {
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
+
+    @Override
+    @Transactional
+    public void update(Long id, String name) {
+        Member member = memberRepository.findById(id);
+        member.setName(name);
+    }
 }
