@@ -8,6 +8,8 @@ import myshop.springshop.domain.OrderItem;
 import myshop.springshop.domain.OrderStatus;
 import myshop.springshop.repository.OrderRepository;
 import myshop.springshop.repository.OrderSearch;
+import myshop.springshop.repository.order.query.OrderQueryDto;
+import myshop.springshop.repository.order.query.OrderQueryRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 public class OrderApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderQueryRepository orderQueryRepository;
 
     @GetMapping("/api/v1/orders")
     public List<Order> ordersV1() {
@@ -65,6 +68,11 @@ public class OrderApiController {
                 = orders.stream().map(order -> new OrderDto(order)).collect(Collectors.toList());
 
         return collect;
+    }
+
+    @GetMapping("/api/v4/orders")
+    public List<OrderQueryDto> ordersV4() {
+        return orderQueryRepository.findOrderQueryDtos();
     }
 
     @Data
