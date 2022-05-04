@@ -21,7 +21,7 @@ public class OrderQueryDto {
         this.orderId = orderId;
         this.name = name;
         this.orderDate = orderDate;
-        this.orderStatus = orderStatus;
+         this.orderStatus = orderStatus;
         this.address = address;
     }
 }
